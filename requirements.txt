@@ -1,0 +1,6 @@
+scikit-learn==1.0.2
+sklearn==0.0.post5
+scipy==1.11.2
+pandas
+numpy
+flask
