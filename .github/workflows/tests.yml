@@ -1,0 +1,26 @@
+name: RUn tests on push
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Install python 3
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.8
+    
+    - name: install dependencies
+      run : |
+        python -m pip install --upgrade pip
+        pip install pytest
+        pip install -r requirements.txt
+        
+    - name: Run test with pytest
+      run: pytest
